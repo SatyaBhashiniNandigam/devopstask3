@@ -12,6 +12,6 @@ CMD java -jar /usr/lib/jenkins/jenkins.war
 RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
 RUN chmod +x kubectl
 RUN mv kubectl /usr/bin
-RUN mkdir /root/.kube
-COPY config /root/.kube
+RUN mkdir /root/kube_files
+COPY config /root/kube_files
 COPY ca.crt client.key client.crt /root/
